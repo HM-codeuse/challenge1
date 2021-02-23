@@ -7,32 +7,33 @@ body {
 
 .container {
 width: 800px;
-border-radius: 10px;
+border-radius: 30px;
 display: flex;
 flex-wrap: wrap;
+margin-left: 27vw;
+margin-top: 13vh ;
 }
 
 .box-presentation {
   background-color:white;
-  width: 800px;
+  width: 720px;
+  padding: 40px;
 }
 .box-offer {
-  background-color: hsl(179, 62%, 43%);
+  background-color: hsl(179, 96%, 33%);
   color: white;
-  width: 400px;
+  width: 320px;
+  padding: 40px;
 
 }
 .box-about {
-  background-color: hsl(179, 74%, 52%);
+  background-color: hsl(179, 62%, 43%);
   color: white;
-  width: 400px;
+  width: 320px;
+  padding: 40px;
 
 }
-/* .button {
-  background-color: bright hsl(71, 73%, 54%);
-  color: white;
-  
-} */
+
 
 .button {
   background-color: hsl(71, 73%, 54%);
@@ -45,4 +46,39 @@ flex-wrap: wrap;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+.presentation-title {
+  color:hsl(179, 62%, 43%);
+}
+
+.presentation-subtitle {
+  color:hsl(71, 73%, 54%);
+}
+
+.presentation-text {
+  color:hsl(218, 22%, 67%);
+}
+
+.price {
+  font-size: 2rem;
+}
+
+p.presentation-text {
+  line-height: 1.8;
+}
+
+.row{
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
