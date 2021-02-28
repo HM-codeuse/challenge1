@@ -1,40 +1,89 @@
+/* IMPORTS FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
-body {
+/* BASIC RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body , html {
   font-size: 16px;
   font-family: 'Karla', sans-serif;
+  height: 100vh;
   background-color: hsl(204, 43%, 93%);
 }
 
+/* CONTAINER */
 .container {
-width: 800px;
-border-radius: 30px;
-display: flex;
-flex-wrap: wrap;
-margin-left: 27vw;
-margin-top: 13vh ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 90vh;
 }
 
-.box-presentation {
-  background-color:white;
-  width: 720px;
-  padding: 40px;
+/* WRAPPER */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "box-presentation box-presentation"
+  "box-offer box-about";
+  min-height: 300px;  
+  max-width: 700px;
+  width: 80vw;
+  line-height: 1.3rem;
+  margin: auto;
+  z-index: 2;
 }
+
+/* PRESENTATION */
+.box-presentation {
+  background: #FFF;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 5rem 3rem 3rem;
+  grid-area: box-presentation;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.presentation-title {
+  color:hsl(179, 62%, 43%);
+}
+.presentation-subtitle {
+  color:hsl(71, 73%, 54%);
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  font-weight: 800;
+}
+.presentation-text {
+  color:hsl(218, 22%, 67%);
+}
+p.presentation-text {
+  line-height: 1.8;
+}
+
+/* OFFER */
 .box-offer {
   background-color: hsl(179, 96%, 33%);
   color: white;
-  width: 320px;
-  padding: 40px;
-
+  padding: 2rem 3rem 2rem;
+  grid-area: box-offer;
+  border-bottom-left-radius: 5px;
 }
-.box-about {
-  background-color: hsl(179, 62%, 43%);
-  color: white;
-  width: 320px;
-  padding: 40px;
-
+.offer-title {
+  padding-bottom: 2rem;
 }
-
-
+.price {
+  font-size: 2rem;
+}
+.offer-description {
+  padding-top: 1.5rem ;
+  padding-bottom: 2rem;
+}
 .button {
   background-color: hsl(71, 73%, 54%);
   border: none;
@@ -43,42 +92,50 @@ margin-top: 13vh ;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 1.1rem;
+  margin-top: 2 rem;
   cursor: pointer;
-  width: 300px;
-  border-radius: 5px;
+  width: 100%;
+  border-radius: 2px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.presentation-title {
-  color:hsl(179, 62%, 43%);
+
+/* ABOUT */
+.box-about {
+  background-color: hsl(179, 62%, 43%);
+  grid-area: box-about;
+  padding: 2rem 3rem;
+  color: white;
+  border-bottom-right-radius: 5px;
 }
 
-.presentation-subtitle {
-  color:hsl(71, 73%, 54%);
+.box-about li {
+  list-style: none;
+  line-height: 1.4;
+  cursor: pointer;
 }
 
-.presentation-text {
-  color:hsl(218, 22%, 67%);
+.box-about a {
+  text-decoration: none;
+  color: white;
 }
 
-.price {
-  font-size: 2rem;
+.box-about :hover {
+  color: hsl(71, 73%, 54%);
+  opacity: 1;
 }
 
-p.presentation-text {
-  line-height: 1.8;
-}
 
-.row{
-  display: flex;
-}
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 100%;
+/* MEDIA QUERIES */
+@media screen and (max-width: 760px) {
+  .wrapper {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: none;
+      max-width: 100vw;
+      grid-template-areas:
+      "box-presentation"
+      "box-offer"
+      "box-about";
   }
-}
-
